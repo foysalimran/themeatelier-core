@@ -12,17 +12,6 @@ $money_back_guarantee = isset($options['money_back_guarantee']) ? $options['mone
 $right_image = isset($options['right_image']['url']) ? $options['right_image']['url'] : '';
 
 ?>
-<style>
-    html {
-        scroll-behavior: smooth;
-    }
-
-    :root {
-        --primary: #0F8C7E;
-        --secondary: #F0FDFA;
-        --dark: #111111;
-    }
-</style>
 <section
     class="h-full pb-20 lg:pb-0 lg:h-[750px] demo_section_bg">
     <div class="container h-full px-4 m-auto">

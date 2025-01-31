@@ -41,7 +41,7 @@ class ThemeatelierCoreMetaboxes
 						'statistics' => esc_html__('Statistics', 'themeatelier-core'),
 						'benefits' => esc_html__('Benefits', 'themeatelier-core'),
 						'layout' => esc_html__('Layouts', 'themeatelier-core'),
-						'main_features' => esc_html__('Main Features', 'themeatelier-core'),
+						'features' => esc_html__('Features', 'themeatelier-core'),
 						'cta_v2' => esc_html__('CTA V2', 'themeatelier-core'),
 						'features_glance' => esc_html__('Features Glance', 'themeatelier-core'),
 						'backend_screenshot' => esc_html__('Backend Screenshots', 'themeatelier-core'),
@@ -127,6 +127,11 @@ class ThemeatelierCoreMetaboxes
 							'id'    => 'statistics_subtitle',
 							'type'  => 'text',
 							'title' => esc_html__('Subtitle', 'themeatelier-core'),
+						),
+						array(
+							'id'    => 'statistics_icon',
+							'type'  => 'wp_editor',
+							'title' => esc_html__('Icon', 'themeatelier-core'),
 						),
 					),
 				),
@@ -474,36 +479,74 @@ class ThemeatelierCoreMetaboxes
 			)
 		));
 	}
-	/**
-	 * Shortcode Metabox function
-	 *
-	 * @param string $prefix The metabox key.
-	 * @return void
-	 */
-	public static function shortcode_metabox($prefix)
+
+	public static function page_metabox($prefix)
 	{
 		THEMEATELIER_CORE::createMetabox(
 			$prefix,
 			array(
 				'title'        => esc_html__('Themeatelier Core', 'themeatelier-core'),
-				'post_type'    => 'themeatelier-core',
-				'context'      => 'side',
-				'show_restore' => false,
+				'post_type'    => 'download',
 			)
 		);
 
-		if (isset($_GET['post'])) {
-			THEMEATELIER_CORE::createSection(
-				$prefix,
-				array(
-					'fields' => array(
-						array(
-							'type'  => 'shortcode',
-							'class' => 'themeatelier-core-admin-sidebar',
+		THEMEATELIER_CORE::createSection(
+			$prefix,
+			array(
+				'fields' => array(
+					array(
+						'id'	=> 'section_group',
+						'type'           => 'group',
+						'title'          => esc_html__('Select Section', 'themeatelier-core'),
+						'button_title'  => esc_html__('New Section', 'statesman'),
+						'accordion_title_prefix'  => true,
+						'accordion_title_number'    => true,
+						'accordion_title_auto'  => false,
+						'fields'    => array(
+							array(
+								'id'	=> 'select_section',
+								'type'  => 'select',
+								'chosen'      => true,
+								'title'  => esc_html__('Select Section', 'themeatelier-core'),
+								'options'     => 'posts',
+								'query_args'  => array(
+									'post_type' => 'themeatelier-core'
+								),
+								'order' => 'ASC',
+							),
 						),
 					),
-				)
-			);
-		}
+					array(
+						'id'    => 'change_nav_menu',
+						'type'  => 'switcher',
+						'title' => esc_html__('Would you like to choose the different nav menu on this page?', 'themeatelier-core'),
+						'default' => false,
+					),
+					array(
+						'id'    => 'select_nav_menu',
+						'type'  => 'select',
+						'title' => esc_html__('Choose Nav Menu', 'themeatelier-core'),
+						'options'   => 'menus',
+						'default'   => 'onepage-menu',
+						'dependency' => array('change_nav_menu', '==', true, 'all'),
+					),
+					array(
+						'id'    => 'color_settings',
+						'type'  => 'color_group',
+						'title' => esc_html__('Colors', 'themeatelier-core'),
+						'options'   => array(
+							'primary' 	=> esc_html__('Primary', 'themeatelier-core'),
+							'secondary' => esc_html__('Secondary', 'themeatelier-core'),
+							'dark' 		=> esc_html__('Dark', 'themeatelier-core'),
+						),
+						'default'   => array(
+							'primary' 	=> '#0F8C7E',
+							'secondary' => '#F0FDFA',
+							'dark' 		=> '#111111',
+						)
+					),
+				),
+			)
+		);
 	}
 }
