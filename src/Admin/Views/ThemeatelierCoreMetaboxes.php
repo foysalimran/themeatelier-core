@@ -38,7 +38,7 @@ class ThemeatelierCoreMetaboxes
 					'title' 	=> esc_html__('Select A Section', 'themeatelier-core'),
 					'options'	=> array(
 						'hero' => esc_html__('Hero', 'themeatelier-core'),
-						'cta' => esc_html__('CTA', 'themeatelier-core'),
+						'statistics' => esc_html__('Statistics', 'themeatelier-core'),
 						'benefits' => esc_html__('Benefits', 'themeatelier-core'),
 						'layout' => esc_html__('Layouts', 'themeatelier-core'),
 						'main_features' => esc_html__('Main Features', 'themeatelier-core'),
@@ -102,7 +102,7 @@ class ThemeatelierCoreMetaboxes
 				),
 				array(
 					'id'    => 'money_back_guarantee',
-					'type'  => 'textarea',
+					'type'  => 'wp_editor',
 					'title' => esc_html__('Money-Back Guarantee Text', 'themeatelier-core'),
 					'dependency' => array('section', '==', 'hero', 'any'),
 				),
@@ -113,18 +113,18 @@ class ThemeatelierCoreMetaboxes
 					'dependency' => array('section', '==', 'hero', 'any'),
 				),
 				array(
-					'id'        => 'cta_section',
+					'id'        => 'statistics_section',
 					'type'      => 'group',
-					'title'     => esc_html__('CTA Items', 'themeatelier-core'),
-					'dependency' => array('section', '==', 'cta', 'any'),
+					'title'     => esc_html__('Statistics Items', 'themeatelier-core'),
+					'dependency' => array('section', '==', 'statistics', 'any'),
 					'fields'    => array(
 						array(
-							'id'    => 'cta_title',
+							'id'    => 'statistics_title',
 							'type'  => 'text',
 							'title' => esc_html__('Title', 'themeatelier-core'),
 						),
 						array(
-							'id'    => 'cta_subtitle',
+							'id'    => 'statistics_subtitle',
 							'type'  => 'text',
 							'title' => esc_html__('Subtitle', 'themeatelier-core'),
 						),

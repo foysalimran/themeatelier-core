@@ -43,8 +43,6 @@ class Frontend
     public function __construct()
     {
         $this->themeatelier_core_public_action();
-
-        echo "Hello world!";
     }
 
     private function themeatelier_core_public_action()
