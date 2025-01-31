@@ -63,7 +63,8 @@ class Admin
         
         ThemeatelierCoreMetaboxes::section_metabox('themeatelier_core_section');
         ThemeatelierCoreMetaboxes::option_metabox('themeatelier_core_options');
-        ThemeatelierCoreMetaboxes::shortcode_metabox('shortcode');
+
+        ThemeatelierCoreMetaboxes::page_metabox('page_metabox');
     }
 
     /**

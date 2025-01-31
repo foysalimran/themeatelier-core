@@ -91,7 +91,7 @@ class ThemeAtelierCorePostTypes
 				'public'          => false,
 				'show_ui'         => true,
 				'show_in_menu'    => true,
-				'menu_icon'       => 'dashicons-calendar',
+				'menu_icon'       => 'dashicons-edit-page',
 				'hierarchical'    => false,
 				'query_var'       => false,
 				'menu_position'   => 5,
