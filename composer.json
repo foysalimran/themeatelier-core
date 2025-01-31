@@ -1,0 +1,19 @@
+{
+    "name": "themeatelier/themeatelier-core",
+    "description": "Themeatelier Core",
+    "type": "wordpress-plugins",
+    "license": "GPL-2.0+",
+    "autoload": {
+        "psr-4": {
+            "ThemeAtelier\\ThemeAtelierCore\\": "src/"
+        },
+        "files": [ "src/Helpers/helper-functions.php" ]
+    },
+    "authors": [
+        {
+            "name": "ThemeAtelier",
+            "email": "themeatelierbd@gmail.com"
+        }
+    ],
+    "require": {}
+}
