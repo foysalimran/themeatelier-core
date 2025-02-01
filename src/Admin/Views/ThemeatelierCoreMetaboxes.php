@@ -45,7 +45,7 @@ class ThemeatelierCoreMetaboxes
 						'features_glance' => esc_html__('Features Glance', 'themeatelier-core'),
 						'backend_screenshot' => esc_html__('Backend Screenshots', 'themeatelier-core'),
 						'pricing' => esc_html__('Pricing', 'themeatelier-core'),
-						'cta_v3' => esc_html__('CTA V3', 'themeatelier-core'),
+						'money_back' => esc_html__('Money Back', 'themeatelier-core'),
 						'faq' => esc_html__('FAQ', 'themeatelier-core'),
 					),
 				),
@@ -372,17 +372,23 @@ class ThemeatelierCoreMetaboxes
 											'title' => esc_html__('Yearly Parches Button', 'themeatelier-core'),
 										),
 										array(
+											'id' => 'is_yearly_popular',
+											'type'	=> 'checkbox',
+											'title'	=> esc_html__('Popular?', 'themeatelier-core'),
+										),
+										array(
 											'id'    => 'yearly_features',
 											'type'  => 'wp_editor',
 											'title' => esc_html__('Yearly Features', 'themeatelier-core'),
 										),
 									),
 
-									array(
-										'id'    => 'yearly_description',
-										'type'  => 'text',
-										'title' => esc_html__('Description', 'themeatelier-core'),
-									),
+
+								),
+								array(
+									'id'    => 'yearly_description',
+									'type'  => 'text',
+									'title' => esc_html__('Description', 'themeatelier-core'),
 								),
 							)
 						),
@@ -413,6 +419,10 @@ class ThemeatelierCoreMetaboxes
 											'id'    => 'lifetime_parches_button',
 											'type'  => 'link',
 											'title' => esc_html__('Lifetime Parches Button', 'themeatelier-core'),
+										),										array(
+											'id' => 'is_lifetime_popular',
+											'type'	=> 'checkbox',
+											'title'	=> esc_html__('Popular?', 'themeatelier-core'),
 										),
 										array(
 											'id'    => 'lifetime_features',
@@ -431,36 +441,50 @@ class ThemeatelierCoreMetaboxes
 					)
 				),
 
-				// CTA V3
+				// Money Back
 				array(
-					'id'    => 'cta_v3_title',
+					'id'    => 'money_back_title',
 					'type'  => 'text',
 					'title' => esc_html__('CTA Title', 'themeatelier-core'),
-					'dependency' => array('section', '==', 'cta_v3', 'any'),
+					'default' => '14-Day Money-Back Guarantee – No Questions Asked',
+					'dependency' => array('section', '==', 'money_back', 'any'),
 				),
 				array(
-					'id'    => 'cta_v3_description',
+					'id'    => 'money_back_description',
 					'type'  => 'wp_editor',
 					'title' => esc_html__('CTA Description', 'themeatelier-core'),
-					'dependency' => array('section', '==', 'cta_v3', 'any'),
+					'default' => 'We are committed to your 100% satisfaction with our plugin and support. If our plugin doesn’t meet your needs, simply let us know. We’ll gladly issue a full refund within 14 days of your purchase, no questions asked. For more information, please review our <a class="border-b border-dotted text-font-color-light border-font-color-light" href="https://themeatelier.net/refund-policy">refund policy</a>.',
+					'dependency' => array('section', '==', 'money_back', 'any'),
 				),
 				array(
-					'id'    => 'cta_v3_payment_terms',
+					'id'    => 'money_back_payment_terms',
 					'type'  => 'text',
 					'title' => esc_html__('Payment Terms', 'themeatelier-core'),
-					'dependency' => array('section', '==', 'cta_v3', 'any'),
+					'default'	=> 'All prices are listed in USD. You can upgrade, downgrade, or cancel your plan anytime.',
+					'dependency' => array('section', '==', 'money_back', 'any'),
 				),
 				array(
-					'id'    => 'cta_v3_payment_type',
+					'id'    => 'money_back_payment_type',
 					'type'  => 'text',
 					'title' => esc_html__('Payment Type', 'themeatelier-core'),
-					'dependency' => array('section', '==', 'cta_v3', 'any'),
+					'default'	=> 'Secure Payment with Paddle',
+					'dependency' => array('section', '==', 'money_back', 'any'),
 				),
 				array(
-					'id'    => 'cta_v3_payment_type_icon',
+					'id'    => 'money_back_payment_type_icon',
 					'type'  => 'media',
 					'title' => esc_html__('Payment Type Icon', 'themeatelier-core'),
-					'dependency' => array('section', '==', 'cta_v3', 'any'),
+					'default' => array(
+						'url' => THEMEATELER_CORE_DIR_URL . 'src/assets/images/cards.svg',
+					),
+					'dependency' => array('section', '==', 'money_back', 'any'),
+				),
+
+				array(
+					'id'    => 'docs_link',
+					'type'  => 'link',
+					'title' => esc_html__('Documentation link', 'themeatelier-core'),
+					'dependency' => array('section', '==', 'money_back', 'any'),
 				),
 
 				// FAQ
@@ -468,6 +492,7 @@ class ThemeatelierCoreMetaboxes
 					'id'    => 'faq_title',
 					'type'  => 'text',
 					'title' => esc_html__('FAQ Title', 'themeatelier-core'),
+					'default'	=> esc_html__('Frequently Asked Questions', 'themeatelier-core'),
 					'dependency' => array('section', '==', 'faq', 'any'),
 				),
 				array(
@@ -518,7 +543,6 @@ class ThemeatelierCoreMetaboxes
 							array(
 								'id'	=> 'select_section',
 								'type'  => 'select',
-								'chosen'      => true,
 								'title'  => esc_html__('Select Section', 'themeatelier-core'),
 								'options'     => 'posts',
 								'query_args'  => array(

@@ -43,7 +43,7 @@ class ThemeatelierCoreLoopHtml
             case 'pricing':
                 include Helpers::themeateleier_core_locate_template('pricing.php');
                 break;
-            case 'cta_v3':
+            case 'money_back':
                 include Helpers::themeateleier_core_locate_template('money-back.php');
                 break;
             case 'faq':
