@@ -15,6 +15,7 @@ $lifetime_description = !empty($pricing_table['lifetime_description']) ? $pricin
             <h2 class="text-ta-section-title -mt-1.5 mb-0">
                 <?php echo $pricing_section_title; ?>
             </h2>
+            
             <?php endif; ?>
             <?php if($pricing_section_subtitle) : ?>
             <span class="inline-block mt-5 text-lg font-normal"><?php echo $pricing_section_subtitle; ?></span>
