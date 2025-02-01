@@ -142,12 +142,6 @@ class ThemeatelierCoreMetaboxes
 					'dependency' => array('section', '==', 'benefits', 'any'),
 				),
 				array(
-					'id'    => 'benefits_section_subtitle',
-					'type'  => 'text',
-					'title' => esc_html__('Benefits Section Subtitle', 'themeatelier-core'),
-					'dependency' => array('section', '==', 'benefits', 'any'),
-				),
-				array(
 					'id'        => 'benefits_items',
 					'type'      => 'group',
 					'title'     => esc_html__('Benefits Items', 'themeatelier-core'),
@@ -157,6 +151,11 @@ class ThemeatelierCoreMetaboxes
 							'id'    => 'benefits_title',
 							'type'  => 'text',
 							'title' => esc_html__('Title', 'themeatelier-core'),
+						),
+						array(
+							'id'    => 'benefits_icon',
+							'type'  => 'icon',
+							'title' => esc_html__('Icon', 'themeatelier-core'),
 						),
 						array(
 							'id'    => 'benefits_description',
@@ -189,47 +188,47 @@ class ThemeatelierCoreMetaboxes
 							'title' => esc_html__('Title', 'themeatelier-core'),
 						),
 						array(
-							'id'    => 'layout_description',
+							'id'    => 'layout_image',
 							'type'  => 'media',
 							'title' => esc_html__('Image', 'themeatelier-core'),
 						),
 					),
 				),
 				array(
-					'id'    => 'main_features_section_title',
+					'id'    => 'features_section_title',
 					'type'  => 'text',
 					'title' => esc_html__('Features Section Title', 'themeatelier-core'),
-					'dependency' => array('section', '==', 'main_features', 'any'),
+					'dependency' => array('section', '==', 'features', 'any'),
 				),
 				array(
-					'id'    => 'main_features_section_subtitle',
+					'id'    => 'features_section_subtitle',
 					'type'  => 'text',
 					'title' => esc_html__('Features Section Subtitle', 'themeatelier-core'),
-					'dependency' => array('section', '==', 'main_features', 'any'),
+					'dependency' => array('section', '==', 'features', 'any'),
 				),
 				array(
-					'id'        => 'main_features_items',
+					'id'        => 'features_items',
 					'type'      => 'group',
 					'title'     => esc_html__('Features Items', 'themeatelier-core'),
-					'dependency' => array('section', '==', 'main_features', 'any'),
+					'dependency' => array('section', '==', 'features', 'any'),
 					'fields'    => array(
 						array(
-							'id'    => 'main_features_title',
+							'id'    => 'features_title',
 							'type'  => 'text',
 							'title' => esc_html__('Title', 'themeatelier-core'),
 						),
 						array(
-							'id'    => 'main_features_description',
+							'id'    => 'features_description',
 							'type'  => 'media',
 							'title' => esc_html__('Image', 'themeatelier-core'),
 						),
 						array(
-							'id'    => 'main_features_description',
+							'id'    => 'features_description',
 							'type'  => 'wp_editor',
 							'title' => esc_html__('Description', 'themeatelier-core'),
 						),
 						array(
-							'id'    => 'main_features_link',
+							'id'    => 'features_link',
 							'type'  => 'link',
 							'title' => esc_html__('Live Link', 'themeatelier-core'),
 						),

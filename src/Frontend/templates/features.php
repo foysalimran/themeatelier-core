@@ -1,10 +1,19 @@
+<?php
+$features_section_title = isset($options['features_section_title']) ? $options['features_section_title'] : '';
+$features_section_subtitle = isset($options['features_section_subtitle']) ? $options['features_section_subtitle'] : '';
+$features_items = isset($options['features_items']) ? $options['features_items'] : '';
+
+?>
+
 <section
     class="py-12 ta-featured md:py-20" id="features">
     <div class="container px-4 mx-auto">
         <div class="max-w-3xl mx-auto mb-12 text-center">
-            <h2 class="text-ta-section-title -mt-1.5 mb-0">
-                Main Features of <span class="demo_text_primary">WhatsApp Chat Help</span>
-            </h2>
+            <?php if ($features_section_title) : ?>
+                <h2 class="text-ta-section-title -mt-1.5 mb-0">
+                    Main Features of <span class="demo_text_primary">WhatsApp Chat Help</span>
+                </h2>
+            <?php endif; ?>
             <span class="inline-block mt-5 text-lg font-normal">WhatsApp Chat Help provides extensive features and customization options, allowing you to create floating chat bubbles, WooCommerce buttons, and shortcode-enabled buttons for WhatsApp integration.</span>
         </div>
 
@@ -26,7 +35,6 @@
                     <li><strong>Position Control</strong>: Place chat bubbles on any corner of the screen for optimal visibility.</li>
                     <li><strong>Time-Based Availability</strong>: Schedule agents availability based on specific hours of weekdays.</li>
                     <li><strong>Mobile-Friendly</strong>: Fully responsive design ensures smooth functionality on all devices.</li>
-
                 </ul>
                 <a target="_blank" href="https://wpchatplugins.com/whatsapp-chat-support" class="mt-9 demo_btn_secondary !py-2 group">Live Demo</a>
             </div>

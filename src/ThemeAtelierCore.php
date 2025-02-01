@@ -6,7 +6,6 @@ use ThemeAtelier\ThemeAtelierCore\Loader;
 use ThemeAtelier\ThemeAtelierCore\Helpers\Helpers;
 use ThemeAtelier\ThemeAtelierCore\Admin\Admin;
 use ThemeAtelier\ThemeAtelierCore\Frontend\Frontend;
-use ThemeAtelier\ThemeAtelierCore\Frontend\Shortcode\CustomShortcode;
 use ThemeAtelier\ThemeAtelierCore\Helpers\ThemeAtelierCorePostTypes;
 
 // don't call the file directly.
@@ -177,6 +176,7 @@ class ThemeAtelierCore
         $plugin_public    = new Frontend($this->get_plugin_slug(), $this->get_version());
         $plugin_helpers   = new Helpers($this->get_plugin_slug(), $this->get_version());
 
+		$this->loader->add_action('wp_loaded', $plugin_helpers, 'register_all_scripts');
     }
 
     /**
@@ -201,7 +201,9 @@ class ThemeAtelierCore
     private function define_admin_hooks()
     {
         $plugin_admin   = new Admin($this->get_plugin_slug(), $this->get_version());
+        $plugin_helpers   = new Helpers($this->get_plugin_slug(), $this->get_version());
 
+        $this->loader->add_action('wp_loaded', $plugin_helpers, 'register_all_scripts');
         $this->loader->add_filter('manage_themeatelier-core_posts_columns', $plugin_admin, 'filter_themeatelier_core_admin_column');
         $this->loader->add_action('manage_hemeatelier-core_posts_custom_column', $plugin_admin, 'display_themeatelier_core_admin_fields', 10, 2);
     }
