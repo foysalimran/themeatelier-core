@@ -26,7 +26,7 @@ class ThemeatelierCoreLoopHtml
                 include Helpers::themeateleier_core_locate_template('benefits.php');
                 break;
             case 'layout':
-                include Helpers::themeateleier_core_locate_template('layout.php');
+                include Helpers::themeateleier_core_locate_template('layouts.php');
                 break;
             case 'features':
                 include Helpers::themeateleier_core_locate_template('features.php');

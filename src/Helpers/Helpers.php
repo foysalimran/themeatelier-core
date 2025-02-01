@@ -43,4 +43,14 @@ class Helpers
 		// Return what we found.
 		return $template;
 	}
+
+	/**
+	 * Register the All scripts for the public-facing side of the site.
+	 *
+	 * @since    1.0.0
+	 */
+	public function register_all_scripts()
+	{
+		wp_register_style('ico-font', THEMEATELER_CORE_ASSETS . 'css/icofont' . $this->min . '.css', array(), '1.0.0', 'all');
+	}
 }
