@@ -64,7 +64,7 @@ $lifetime_description = !empty($pricing_table['lifetime_description']) ? $pricin
                     <?php endif; ?>
                 </div>
                 <?php if($yearly_description) : ?>
-                <p class="mt-10 mb-0 text-center"><?php echo esc_html($yearly_description); ?></p>
+                <p class="mt-10 mb-0 text-center"><?php echo wp_kses_post($yearly_description); ?></p>
                 <?php endif; ?>
             </div>
             <div class="tab-pane">
@@ -105,7 +105,7 @@ $lifetime_description = !empty($pricing_table['lifetime_description']) ? $pricin
 
                 </div>
                 <?php if($lifetime_description) : ?>
-                    <p class="mt-10 mb-0 text-center"><?php echo esc_html($lifetime_description); ?></p>
+                    <p class="mt-10 mb-0 text-center"><?php echo wp_kses_post($lifetime_description); ?></p>
                 <?php endif; ?>
             </div>
         </div>
