@@ -1,11 +1,16 @@
-<!-- ========== Faq section start ========== -->
+<?php 
+$faq_section_title = isset($options['faq_title']) ? $options['faq_title'] : '';
+$faq_items = !empty($options['faq_items']) ? $options['faq_items'] : [];
+?>
 <section
     id="faq" class="py-12 lg:py-20 demo_section_bg">
+    <?php if($faq_section_title) : ?>
     <div class="container">
         <div class="mb-12 text-center">
-            <h2 class="text-ta-section-title -mt-1.5 mb-4">Frequently Asked Questions</h2>
+            <h2 class="text-ta-section-title -mt-1.5 mb-4"><?php echo esc_html($faq_section_title); ?></h2>
         </div>
     </div>
+    <?php endif; ?> 
     <div class="container">
         <div class="grid grid-cols-12 gap-8">
             <div class="col-span-12 lg:col-span-6">
@@ -81,66 +86,21 @@
             </div>
 
             <div class="col-span-12 lg:col-span-6">
-                <!-- Accordion items -->
+            <?php if($faq_items) : ?>
+                <?php foreach ($faq_items as $item => $faq_item) : ?>
                 <div class="mb-4 bg-white border border-solid border-border-color" data-index="0">
                     <div class="flex items-center justify-between gap-2 px-6 cursor-pointer accordion-header">
-                        <h3 class="mb-0 text-xl">What is your refund policy?</h3>
+                        <h3 class="mb-0 text-xl"><?php echo esc_html($faq_item['faq_item_title']); ?></h3>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                             <path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
                         </svg>
                     </div>
                     <div class="px-6 accordion-content">
-                        <p class="p-0 mt-3 mb-0">We fully stand behind our plugins and are committed to delivering quality. However, we understand that not every plugin will be a perfect fit for everyone. If you’re not satisfied with your purchase, encounter any issues, or if there’s a problem we can’t resolve, we’re happy to offer a full 100% refund within 14 days of your original purchase—no questions asked.</p>
+                        <p class="p-0 mt-3 mb-0"><?php echo wp_kses_post($faq_item['faq_item_description']); ?></p>
                     </div>
                 </div>
-                <div class="mb-4 bg-white border border-solid border-border-color" data-index="0">
-                    <div class="flex items-center justify-between gap-2 px-6 cursor-pointer accordion-header">
-                        <h3 class="mb-0 text-xl">Can I use a ThemeAtelier plugins on more than one site?</h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
-                        </svg>
-                    </div>
-                    <div class="px-6 accordion-content">
-                        <p class="p-0 mt-3 mb-2">When purchasing a ThemeAtelier plugin from CodeCanyon, the licensing terms are governed by CodeCanyon's standard licenses. According to these terms, each license permits the use of the plugin on a single end product, which typically translates to one website or domain. This means that to use the plugin on multiple sites, you would need to purchase separate licenses for each site.</p>
-                        <p>
-                            It's important to note that CodeCanyon does not offer a developer or multi-site license for themes and code items. Therefore, even with an Extended License, the usage is still limited to a single end product and does not extend to multiple sites. </p>
-                    </div>
-                </div>
-                <div class="mb-4 bg-white border border-solid border-border-color" data-index="0">
-                    <div class="flex items-center justify-between gap-2 px-6 cursor-pointer accordion-header">
-                        <h3 class="mb-0 text-xl">Can I customize the plugin?</h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
-                        </svg>
-                    </div>
-                    <div class="px-6 accordion-content">
-                        <p class="p-0 mt-3 mb-0">Our plugins are fully customizable, giving you complete control over the styling. Each plugin includes an easy-to-use settings panel, allowing you to adjust all features without needing to touch a single line of code.</p>
-                    </div>
-                </div>
-                <div class="mb-4 bg-white border border-solid border-border-color" data-index="0">
-                    <div class="flex items-center justify-between gap-2 px-6 cursor-pointer accordion-header">
-                        <h3 class="mb-0 text-xl">How often are plugins updated?</h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
-                        </svg>
-                    </div>
-                    <div class="px-6 accordion-content">
-                        <p class="p-0 mt-3 mb-0">Plugin updates depend on several factors. Security patches and critical bug fixes are prioritized and released as quickly as possible. Updates that enhance our plugin framework and introduce new features are provided regularly.</p>
-                    </div>
-                </div>
-
-                <div class="mb-4 bg-white border border-solid border-border-color" data-index="0">
-                    <div class="flex items-center justify-between gap-2 px-6 cursor-pointer accordion-header">
-                        <h3 class="mb-0 text-xl">Are the plugins translation-ready?</h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
-                        </svg>
-                    </div>
-                    <div class="px-6 accordion-content">
-                        <p class="p-0 mt-3 mb-0">Yes, ThemeAtelier plugins are fully translatable and have been tested with WPML, Polylang, Loco Translate, qTranslate-X, GTranslate, Google Language Translator, WPGlobus, and more.</p>
-                    </div>
-                </div>
-
+                <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>
