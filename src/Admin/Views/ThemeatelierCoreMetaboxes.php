@@ -42,7 +42,6 @@ class ThemeatelierCoreMetaboxes
 						'benefits' => esc_html__('Benefits', 'themeatelier-core'),
 						'layout' => esc_html__('Layouts', 'themeatelier-core'),
 						'features' => esc_html__('Features', 'themeatelier-core'),
-						'cta_v2' => esc_html__('CTA V2', 'themeatelier-core'),
 						'features_glance' => esc_html__('Features Glance', 'themeatelier-core'),
 						'backend_screenshot' => esc_html__('Backend Screenshots', 'themeatelier-core'),
 						'pricing' => esc_html__('Pricing', 'themeatelier-core'),
@@ -218,7 +217,17 @@ class ThemeatelierCoreMetaboxes
 							'title' => esc_html__('Title', 'themeatelier-core'),
 						),
 						array(
-							'id'    => 'features_description',
+							'id'    => 'features_image_position',
+							'type'  => 'button_set',
+							'title' => esc_html__('Image Position', 'themeatelier-core'),
+							'options' => array(
+								'left' => esc_html__('Left', 'themeatelier-core'),
+								'right' => esc_html__('Right', 'themeatelier-core'),
+							),
+							'default' => 'left',
+						),
+						array(
+							'id'    => 'features_image',
 							'type'  => 'media',
 							'title' => esc_html__('Image', 'themeatelier-core'),
 						),
@@ -238,25 +247,33 @@ class ThemeatelierCoreMetaboxes
 					'id'    => 'cta_v2_title',
 					'type'  => 'text',
 					'title' => esc_html__('Features Title', 'themeatelier-core'),
-					'dependency' => array('section', '==', 'cta_v2', 'any'),
+					'dependency' => array('section', '==', 'features', 'any'),
+					'default' => esc_html__('Collect Leads with WhatsApp Effortlessly', 'themeatelier-core'),
 				),
 				array(
 					'id'    => 'cta_v2_subtitle',
 					'type'  => 'text',
 					'title' => esc_html__('Features Subtitle', 'themeatelier-core'),
-					'dependency' => array('section', '==', 'cta_v2', 'any'),
+					'dependency' => array('section', '==', 'features', 'any'),
+					'default' => esc_html__('Engage with your customers anytime, anywhere, and never miss a potential lead! With our plugin, connecting with your audience has never been easier, ensuring you turn every interaction into an opportunity.', 'themeatelier-core'),
 				),
 				array(
 					'id'    => 'cta_v2_link',
 					'type'  => 'link',
 					'title' => esc_html__('Button', 'themeatelier-core'),
-					'dependency' => array('section', '==', 'cta_v2', 'any'),
+					'dependency' => array('section', '==', 'features', 'any'),
+					'default'  => array(
+						'url'    => '#pricing',
+						'text'   => esc_html__('Get Chat Whatsapp Now', 'themeatelier-core'),
+						'target' => '_self'
+					),
 				),
 				array(
 					'id'    => 'cta_v2_money_back_guarantee',
-					'type'  => 'textarea',
+					'type'  => 'wp_editor',
 					'title' => esc_html__('Money-Back Guarantee Text', 'themeatelier-core'),
-					'dependency' => array('section', '==', 'cta_v2', 'any'),
+					'dependency' => array('section', '==', 'features', 'any'),
+					'default'	=> __('14-Day No Question Asked <a class="text-white border-b border-white border-dotted" href="https://themeatelier.net/refund-policy/" target="_blank" rel="noreferrer noopener">Refund Policy</a>', 'themeatelier-core'),
 				),
 				array(
 					'id'    => 'features_glance_section_title',
@@ -265,23 +282,16 @@ class ThemeatelierCoreMetaboxes
 					'dependency' => array('section', '==', 'features_glance', 'any'),
 				),
 				array(
-					'id'    => 'features_glance_section_subtitle',
-					'type'  => 'text',
-					'title' => esc_html__('Features Glance Section Subtitle', 'themeatelier-core'),
+					'id'    => 'features_left_side_list',
+					'type'  => 'wp_editor',
+					'title' => esc_html__('Left Side List', 'themeatelier-core'),
 					'dependency' => array('section', '==', 'features_glance', 'any'),
 				),
 				array(
-					'id'        => 'features_glance_items',
-					'type'      => 'group',
-					'title'     => esc_html__('Features Glance Items', 'themeatelier-core'),
+					'id'    => 'features_right_side_list',
+					'type'  => 'wp_editor',
+					'title' => esc_html__('Right Side List', 'themeatelier-core'),
 					'dependency' => array('section', '==', 'features_glance', 'any'),
-					'fields'    => array(
-						array(
-							'id'    => 'features_glance_description',
-							'type'  => 'wp_editor',
-							'title' => esc_html__('Description', 'themeatelier-core'),
-						),
-					),
 				),
 
 				// Backend Screenshots
@@ -301,6 +311,9 @@ class ThemeatelierCoreMetaboxes
 					'id'        => 'backend_screenshot_items',
 					'type'      => 'group',
 					'title'     => esc_html__('Backend Screenshot Items', 'themeatelier-core'),
+					'accordion_title_prefix'  => true,
+					'accordion_title_number'    => true,
+					'accordion_title_auto'  => false,
 					'dependency' => array('section', '==', 'backend_screenshot', 'any'),
 					'fields'    => array(
 						array(
@@ -514,6 +527,16 @@ class ThemeatelierCoreMetaboxes
 								'order' => 'ASC',
 							),
 						),
+					),
+					array(
+						'id'    => 'website_logo',
+						'type'  => 'media',
+						'title' => esc_html__('Website Logo', 'themeatelier-core'),
+					),
+					array(
+						'id'    => 'item_logo',
+						'type'  => 'media',
+						'title' => esc_html__('Item Logo', 'themeatelier-core'),
 					),
 					array(
 						'id'    => 'change_nav_menu',
