@@ -1,11 +1,12 @@
 <?php
+$backend_screenshot_section_id = isset($options['backend_screenshot_section_id']) ? $options['backend_screenshot_section_id'] : 'screenshots';
 $backend_screenshot_section_title = isset($options['backend_screenshot_section_title']) ? $options['backend_screenshot_section_title'] : '';
 $backend_screenshot_section_subtitle = isset($options['backend_screenshot_section_subtitle']) ? $options['backend_screenshot_section_subtitle'] : '';
 $backend_screenshot_items = isset($options['backend_screenshot_items']) ? $options['backend_screenshot_items'] : '';
 ?>
 
-<section
-    class="py-12 ta-featured md:py-20" id="screenshots">
+<section id="<?php echo esc_attr($backend_screenshot_section_id); ?>"
+    class="py-12 ta-featured md:py-20">
     <div class="container px-4 mx-auto">
         <div class="max-w-3xl mx-auto mb-12 text-center">
             <?php if ($backend_screenshot_section_title) : ?>

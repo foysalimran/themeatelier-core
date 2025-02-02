@@ -176,7 +176,8 @@ class ThemeAtelierCore
         $plugin_public    = new Frontend($this->get_plugin_slug(), $this->get_version());
         $plugin_helpers   = new Helpers($this->get_plugin_slug(), $this->get_version());
 
-		$this->loader->add_action('wp_loaded', $plugin_helpers, 'register_all_scripts');
+        $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts', 11 );
+        $this->loader->add_action('wp_loaded', $plugin_helpers, 'register_all_scripts');
     }
 
     /**

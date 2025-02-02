@@ -1,4 +1,5 @@
 <?php
+$features_section_id = isset($options['features_section_id']) ? $options['features_section_id'] : 'features';
 $features_section_title = isset($options['features_section_title']) ? $options['features_section_title'] : '';
 $features_section_subtitle = isset($options['features_section_subtitle']) ? $options['features_section_subtitle'] : '';
 $features_items     = isset($options['features_items']) ? $options['features_items'] : '';
@@ -10,7 +11,7 @@ $cta_v2_link_text   = isset($cta_v2_link['text']) ? $cta_v2_link['text'] : '';
 $cta_v2_money_back_guarantee   = isset($options['cta_v2_money_back_guarantee']) ? $options['cta_v2_money_back_guarantee'] : '';
 ?>
 
-<section
+<section id="<?php echo esc_attr($features_section_id); ?>"
     class="py-12 ta-featured md:py-20" id="features">
     <div class="container px-4 mx-auto">
         <div class="max-w-3xl mx-auto mb-12 text-center">

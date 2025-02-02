@@ -16,6 +16,9 @@ class ThemeatelierCoreLoopHtml
         $section = isset($section['section']) ? $section['section'] : 'hero';
 
         switch ($section) {
+            case 'header':
+                include Helpers::themeateleier_core_locate_template('header.php');
+                break;
             case 'hero':
                 include Helpers::themeateleier_core_locate_template('hero.php');
                 break;

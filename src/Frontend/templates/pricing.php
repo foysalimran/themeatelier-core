@@ -1,4 +1,5 @@
 <?php 
+$pricing_section_id = isset($options['pricing_section_id']) ? $options['pricing_section_id'] : 'pricing';
 $pricing_section_title = isset($options['pricing_section_title']) ? $options['pricing_section_title'] : '';
 $pricing_section_subtitle = isset($options['pricing_section_subtitle']) ? $options['pricing_section_subtitle'] : '';
 $pricing_table = !empty($options['pricing_table']) ? $options['pricing_table'] : [];
@@ -8,7 +9,7 @@ $pricing_table_lifetime = !empty($pricing_table['pricing_table_lifetime']) ? $pr
 $lifetime_description = !empty($pricing_table['lifetime_description']) ? $pricing_table['lifetime_description'] : [];
 ?>
 
-<section id="pricing" class="py-12 pricing tabs md:py-20 demo_section_bg">
+<section id="<?php echo esc_attr($pricing_section_id); ?>" class="py-12 pricing tabs md:py-20 demo_section_bg">
     <div class="container px-4 mx-auto">
         <div class="max-w-3xl mx-auto mb-12 text-center">
             <?php if($pricing_section_title) : ?>

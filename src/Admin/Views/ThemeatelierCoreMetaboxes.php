@@ -37,6 +37,7 @@ class ThemeatelierCoreMetaboxes
 					'type'  	=> 'select',
 					'title' 	=> esc_html__('Select A Section', 'themeatelier-core'),
 					'options'	=> array(
+						'header' => esc_html__('Header', 'themeatelier-core'),
 						'hero' => esc_html__('Hero', 'themeatelier-core'),
 						'statistics' => esc_html__('Statistics', 'themeatelier-core'),
 						'benefits' => esc_html__('Benefits', 'themeatelier-core'),
@@ -75,6 +76,34 @@ class ThemeatelierCoreMetaboxes
 		// Create a section
 		THEMEATELIER_CORE::createSection($prefix, array(
 			'fields' => array(
+				array(
+					'id'    => 'item_logo',
+					'type'  => 'media',
+					'title' => esc_html__('Item Logo', 'themeatelier-core'),
+					'dependency' => array('section', '==', 'header', 'any'),
+				),
+				array(
+					'id'    => 'change_nav_menu',
+					'type'  => 'switcher',
+					'title' => esc_html__('Would you like to choose the different nav menu on this page?', 'themeatelier-core'),
+					'default' => true,
+					'dependency' => array('section', '==', 'header', 'any'),
+				),
+				array(
+					'id'    => 'select_nav_menu',
+					'type'  => 'select',
+					'title' => esc_html__('Choose Nav Menu', 'themeatelier-core'),
+					'options'   => 'menus',
+					'default'   => 'onepage-menu',
+					'dependency' => array('section|change_nav_menu', '==|==', 'header|true', 'all'),
+				),
+				array(
+					'id'    => 'section_id',
+					'type'  => 'text',
+					'title' => esc_html__('Section ID', 'themeatelier-core'),
+					'dependency' => array('section', '==', 'hero', 'any'),
+					'default' => 'hero',
+				),
 				array(
 					'id'    => 'section_title',
 					'type'  => 'text',
@@ -125,6 +154,13 @@ class ThemeatelierCoreMetaboxes
 					'dependency' => array('section', '==', 'hero', 'any'),
 				),
 				array(
+					'id'        => 'statistics_section_id',
+					'type'      => 'text',
+					'title'     => esc_html__('Statistics Section ID', 'themeatelier-core'),
+					'dependency' => array('section', '==', 'statistics', 'any'),
+					'default' 	=> 'statistics',
+				),
+				array(
 					'id'        => 'statistics_section',
 					'type'      => 'group',
 					'title'     => esc_html__('Statistics Items', 'themeatelier-core'),
@@ -142,7 +178,12 @@ class ThemeatelierCoreMetaboxes
 						),
 						array(
 							'id'    => 'statistics_icon',
-							'type'  => 'wp_editor',
+							'type'  => 'media',
+							'title' => esc_html__('Icon', 'themeatelier-core'),
+						),
+						array(
+							'id'    => 'statistics_icon_bg',
+							'type'  => 'color',
 							'title' => esc_html__('Icon', 'themeatelier-core'),
 						),
 					),
@@ -150,23 +191,35 @@ class ThemeatelierCoreMetaboxes
 						array(
 							'statistics_title'	=> esc_html__('99%', 'themeatelier-core'),
 							'statistics_subtitle'	=> esc_html__('Customer Satisfaction', 'themeatelier-core'),
+							'statistics_icon'	=> array(
+								'url' => THEMEATELER_CORE_DIR_URL . 'src/assets/images/icon_01.svg',
+							),
+							'statistics_icon_bg'	=> '#C9ECFE',
 						),
 						array(
 							'statistics_title'	=> esc_html__('4.80', 'themeatelier-core'),
 							'statistics_subtitle'	=> esc_html__('Based on 3 Reviews', 'themeatelier-core'),
+							'statistics_icon'	=> array(
+								'url' => THEMEATELER_CORE_DIR_URL . 'src/assets/images/icon_02.svg',
+							),
+							'statistics_icon_bg'	=> '#FFF5D7',
 						),
 						array(
 							'statistics_title'	=> esc_html__('24000+', 'themeatelier-core'),
 							'statistics_subtitle'	=> esc_html__('All Time Downloads', 'themeatelier-core'),
+							'statistics_icon'	=> array(
+								'url' => THEMEATELER_CORE_DIR_URL . 'src/assets/images/icon_03.svg',
+							),
+							'statistics_icon_bg'	=> '#DCF5F0',
 						),
 					),
 				),
 				array(
-					'id'    => 'benefits_section_title',
+					'id'    => 'benefits_section_id',
 					'type'  => 'text',
-					'title' => esc_html__('Benefits Section Title', 'themeatelier-core'),
+					'title' => esc_html__('Benefits Section ID', 'themeatelier-core'),
 					'dependency' => array('section', '==', 'benefits', 'any'),
-					'default' => __('Key Benefits: Why Should You Use <br><span class="demo_text_primary">WhatsApp Chat Help?</span>', 'themeatelier-core'),
+					'default' => 'benefits',
 				),
 				array(
 					'id'        => 'benefits_items',
@@ -202,6 +255,13 @@ class ThemeatelierCoreMetaboxes
 							'benefits_description'	=> esc_html__('You can add plenty of different people as options for users to send messages and ask for help. Also can set availability time for each person. There are options to search by name and filter only the search name.', 'themeatelier-core'),
 						),
 					),
+				),
+				array(
+					'id'    => 'layout_section_id',
+					'type'  => 'text',
+					'title' => esc_html__('Layout Section ID', 'themeatelier-core'),
+					'dependency' => array('section', '==', 'layout', 'any'),
+					'default' => 'layout',
 				),
 				array(
 					'id'    => 'layout_section_title',
@@ -248,6 +308,13 @@ class ThemeatelierCoreMetaboxes
 							),
 						),
 					),
+				),
+				array(
+					'id'    => 'features_section_id',
+					'type'  => 'text',
+					'title' => esc_html__('Features Section ID', 'themeatelier-core'),
+					'dependency' => array('section', '==', 'features', 'any'),
+					'default' => 'features',
 				),
 				array(
 					'id'    => 'features_section_title',
@@ -376,6 +443,13 @@ class ThemeatelierCoreMetaboxes
 					'default'	=> __('14-Day No Question Asked <a class="text-white border-b border-white border-dotted" href="https://themeatelier.net/refund-policy/" target="_blank" rel="noreferrer noopener">Refund Policy</a>', 'themeatelier-core'),
 				),
 				array(
+					'id'    => 'features_glance_section_id',
+					'type'  => 'text',
+					'title' => esc_html__('Features Glance Section ID', 'themeatelier-core'),
+					'dependency' => array('section', '==', 'features_glance', 'any'),
+					'default' => 'features_glance',
+				),
+				array(
 					'id'    => 'features_glance_section_title',
 					'type'  => 'text',
 					'title' => esc_html__('Features Glance Section Title', 'themeatelier-core'),
@@ -426,6 +500,13 @@ class ThemeatelierCoreMetaboxes
 
 				// Backend Screenshots
 				array(
+					'id'    => 'backend_screenshot_section_id',
+					'type'  => 'text',
+					'title' => esc_html__('Backend Screenshot Section ID', 'themeatelier-core'),
+					'dependency' => array('section', '==', 'backend_screenshot', 'any'),
+					'default' => 'screenshots',
+				),
+				array(
 					'id'    => 'backend_screenshot_section_title',
 					'type'  => 'text',
 					'title' => esc_html__('Backend Screenshot Section Title', 'themeatelier-core'),
@@ -457,6 +538,13 @@ class ThemeatelierCoreMetaboxes
 				),
 
 				// Pricing
+				array(
+					'id'    => 'pricing_section_id',
+					'type'  => 'text',
+					'title' => esc_html__('Pricing Section ID', 'themeatelier-core'),
+					'dependency' => array('section', '==', 'pricing', 'any'),
+					'default'	=>	'pricing',
+				),
 				array(
 					'id'    => 'pricing_section_title',
 					'type'  => 'text',
@@ -738,6 +826,13 @@ class ThemeatelierCoreMetaboxes
 
 				// Money Back
 				array(
+					'id'    => 'money_back_section_id',
+					'type'  => 'text',
+					'title' => esc_html__('CTA Section ID', 'themeatelier-core'),
+					'default' => 'money_back',
+					'dependency' => array('section', '==', 'money_back', 'any'),
+				),
+				array(
 					'id'    => 'money_back_title',
 					'type'  => 'text',
 					'title' => esc_html__('CTA Title', 'themeatelier-core'),
@@ -783,6 +878,13 @@ class ThemeatelierCoreMetaboxes
 				),
 
 				// FAQ
+				array(
+					'id'    => 'faq_section_id',
+					'type'  => 'text',
+					'title' => esc_html__('FAQ Section ID', 'themeatelier-core'),
+					'default'	=> 'faq',
+					'dependency' => array('section', '==', 'faq', 'any'),
+				),
 				array(
 					'id'    => 'faq_title',
 					'type'  => 'text',
@@ -865,35 +967,28 @@ It\'s important to note that CodeCanyon does not offer a developer or multi-site
 								'title'  => esc_html__('Select Section', 'themeatelier-core'),
 								'options'     => 'posts',
 								'query_args'  => array(
-									'post_type' => 'themeatelier-core'
+									'post_type' => 'themeatelier-core',
+									'public' => true,
+									'posts_per_page' => -1,
+									'number'    => -1,
 								),
 								'order' => 'ASC',
 							),
 						),
 					),
 					array(
-						'id'    => 'website_logo',
-						'type'  => 'media',
-						'title' => esc_html__('Website Logo', 'themeatelier-core'),
-					),
-					array(
-						'id'    => 'item_logo',
-						'type'  => 'media',
-						'title' => esc_html__('Item Logo', 'themeatelier-core'),
-					),
-					array(
-						'id'    => 'change_nav_menu',
-						'type'  => 'switcher',
-						'title' => esc_html__('Would you like to choose the different nav menu on this page?', 'themeatelier-core'),
-						'default' => false,
-					),
-					array(
-						'id'    => 'select_nav_menu',
-						'type'  => 'select',
-						'title' => esc_html__('Choose Nav Menu', 'themeatelier-core'),
-						'options'   => 'menus',
-						'default'   => 'onepage-menu',
-						'dependency' => array('change_nav_menu', '==', true, 'all'),
+						'id'    => 'footer_helpful_links',
+						'type'  => 'wp_editor',
+						'title' => esc_html__('Footer Helpful Links', 'themeatelier-core'),
+						'default' => '<ul>
+                  <li><a href="#features">Features</a></li>
+                  <li><a href="#price">Pricing</a></li>
+                  <li><a href="#faq">FAQs</a></li>
+                  <li><a href="/account">My Account</a></li>
+                  <li><a target="_blank" href="https://docs.themeatelier.net/docs/whatsapp-chat-help-pro/overview/">Documentation</a></li>
+                  <li><a target="_blank" href="https://www.youtube.com/watch?v=2WzK6mE6BQE">Video Tutorials</a></li>
+                  <li><a href="/contact">Submit a Ticket</a></li>
+                </ul>',
 					),
 					array(
 						'id'    => 'color_settings',
