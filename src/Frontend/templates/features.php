@@ -27,41 +27,45 @@ $cta_v2_money_back_guarantee   = isset($options['cta_v2_money_back_guarantee']) 
         </div>
 
         <div class="space-y-20">
-            <?php foreach ($features_items as $index => $item) :
-                $features_title = isset($item['features_title']) ? $item['features_title'] : '';
-                $features_description = isset($item['features_description']) ? $item['features_description'] : '';
-                $features_link_text = isset($item['features_link']['text']) ? $item['features_link']['text'] : '';
-                $features_link_url = isset($item['features_link']['url']) ? $item['features_link']['url'] : '';
-                $features_image_position = isset($item['features_image_position']) ? $item['features_image_position'] : '';
-                $features_image = isset($item['features_image']['url']) ? $item['features_image']['url'] : '';
+            <?php
+            if ($features_items) :
+                foreach ($features_items as $index => $item) :
+                    $features_title = isset($item['features_title']) ? $item['features_title'] : '';
+                    $features_description = isset($item['features_description']) ? $item['features_description'] : '';
+                    $features_link_text = isset($item['features_link']['text']) ? $item['features_link']['text'] : '';
+                    $features_link_url = isset($item['features_link']['url']) ? $item['features_link']['url'] : '';
+                    $features_image_position = isset($item['features_image_position']) ? $item['features_image_position'] : '';
+                    $features_image = isset($item['features_image']['url']) ? $item['features_image']['url'] : '';
             ?>
-                <div class="grid items-center gap-10 mb-20 lg:grid-cols-2">
-                    <?php if ($features_image_position == 'left') : ?>
+                    <div class="grid items-center gap-10 mb-20 lg:grid-cols-2">
+                        <?php if ($features_image_position == 'left') : ?>
+                            <div class="">
+                                <img src="<?php echo esc_url($features_image); ?>" alt="">
+                            </div>
+                        <?php endif; ?>
                         <div class="">
-                            <img src="<?php echo esc_url($features_image); ?>" alt="">
+                            <?php if ($features_title) : ?>
+                                <h1 class="mb-0 text-4xl xl:text-ta-section-title">
+                                    <?php echo esc_html__($features_title); ?>
+                                </h1>
+                            <?php endif;
+                            if ($features_description) :
+                                echo wp_kses_post($features_description);
+                            endif;
+                            if ($features_link_text) :
+                            ?>
+                                <a target="_blank" href="<?php echo esc_url($features_link_url); ?>" class="mt-9 demo_btn_secondary !py-2 group"><?php echo esc_html($features_link_text) ?></a>
+                            <?php endif; ?>
                         </div>
-                    <?php endif; ?>
-                    <div class="">
-                        <?php if ($features_title) : ?>
-                            <h1 class="mb-0 text-4xl xl:text-ta-section-title">
-                                <?php echo esc_html__($features_title); ?>
-                            </h1>
-                        <?php endif;
-                        if ($features_description) :
-                            echo wp_kses_post($features_description);
-                        endif;
-                        if ($features_link_text) :
-                        ?>
-                            <a target="_blank" href="<?php echo esc_url($features_link_url); ?>" class="mt-9 demo_btn_secondary !py-2 group"><?php echo esc_html($features_link_text) ?></a>
+                        <?php if ($features_image_position == 'right') : ?>
+                            <div class="">
+                                <img src="<?php echo esc_url($features_image); ?>" alt="">
+                            </div>
                         <?php endif; ?>
                     </div>
-                    <?php if ($features_image_position == 'right') : ?>
-                        <div class="">
-                            <img src="<?php echo esc_url($features_image); ?>" alt="">
-                        </div>
-                    <?php endif; ?>
-                </div>
-            <?php endforeach; ?>
+            <?php endforeach;
+            endif;
+            ?>
             <div class="p-0 overflow-hidden rounded-lg demo_primary_bg">
                 <div class="grid items-center grid-cols-12 gap-8 features_cta">
                     <div class="col-span-12 text-center lg:col-span-8 lg:text-start">
