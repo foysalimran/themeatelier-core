@@ -135,7 +135,7 @@ class ThemeatelierCoreMetaboxes
 					'title' => esc_html__('Button 02', 'themeatelier-core'),
 					'dependency' => array('section', '==', 'hero', 'any'),
 					'default' => array(
-						'url'    => 'https://wpchatplugins.com/whatsapp-chat-support',
+						'url'    => '#',
 						'text' 	=> esc_html__('Live Demo', 'themeatelier-core'),
 						'target' => '_self'
 					),
@@ -145,7 +145,7 @@ class ThemeatelierCoreMetaboxes
 					'type'  => 'wp_editor',
 					'title' => esc_html__('Money-Back Guarantee Text', 'themeatelier-core'),
 					'dependency' => array('section', '==', 'hero', 'any'),
-					'default'	=> __('14-Day No Question Asked <a class="text-white border-b border-white border-dotted" href="https://themeatelier.net/refund-policy/" target="_blank" rel="noreferrer noopener">Refund Policy</a>', 'themeatelier-core'),
+					'default'	=> __('14-Day No Question Asked <a class="border-b border-dotted text-font-color-light border-font-color-light" href="https://themeatelier.net/refund-policy/" target="_blank" rel="noreferrer noopener">Refund Policy</a>', 'themeatelier-core'),
 				),
 				array(
 					'id'    => 'right_image',
@@ -220,6 +220,13 @@ class ThemeatelierCoreMetaboxes
 					'title' => esc_html__('Benefits Section ID', 'themeatelier-core'),
 					'dependency' => array('section', '==', 'benefits', 'any'),
 					'default' => 'benefits',
+				),
+				array(
+					'id'    => 'benefits_section_title',
+					'type'  => 'text',
+					'title' => esc_html__('Benefits Section Title', 'themeatelier-core'),
+					'dependency' => array('section', '==', 'benefits', 'any'),
+					'default' => 'Key Benefits: Why Should You Use <br><span class="demo_text_primary">WhatsApp Chat Help?</span>',
 				),
 				array(
 					'id'        => 'benefits_items',
@@ -383,7 +390,7 @@ class ThemeatelierCoreMetaboxes
 							<li><strong>Mobile-Friendly</strong>: Fully responsive design ensures smooth functionality on all devices.</li>
 						</ul>', 'themeatelier-core'),
 							'features_link'	=> array(
-								'url'    => 'https://wpchatplugins.com/whatsapp-chat-support',
+								'url'    => '#',
 								'text'   => esc_html__('Live Demo', 'themeatelier-core'),
 								'target' => '_blank'
 							),
@@ -403,7 +410,7 @@ class ThemeatelierCoreMetaboxes
 								<li><strong>Button Positioning</strong>: Position button on different places like before cart, after cart etc.</li>
 							</ul>', 'themeatelier-core'),
 							'features_link'	=> array(
-								'url'    => 'https://wpchatplugins.com/whatsapp-chat-support',
+								'url'    => '#',
 								'text'   => esc_html__('Live Demo', 'themeatelier-core'),
 								'target' => '_blank'
 							),
@@ -738,7 +745,7 @@ class ThemeatelierCoreMetaboxes
 											'lifetime_subtitle'     => esc_html__('Best Choice for Individuals', 'themeatelier-core'),
 											'lifetime_price'     => 129,
 											'lifetime_parches_button'     => array(
-												'url'    => 'https://themeatelier.net/checkout?edd_action=add_to_cart&download_id=534&edd_options[price_id]=1',
+												'url'    => 'https://themeatelier.net/checkout?edd_action=add_to_cart&download_id=534&edd_options[price_id]=4',
 												'text'   => esc_html__('Buy Now', 'themeatelier-core'),
 												'target' => '_self'
 											),
@@ -764,7 +771,7 @@ class ThemeatelierCoreMetaboxes
 											'lifetime_subtitle'     => esc_html__('Best Choice for Small Business and Freelancers', 'themeatelier-core'),
 											'lifetime_price'     => 229,
 											'lifetime_parches_button'     => array(
-												'url'    => 'https://themeatelier.net/checkout?edd_action=add_to_cart&download_id=534&edd_options[price_id]=2',
+												'url'    => 'https://themeatelier.net/checkout?edd_action=add_to_cart&download_id=534&edd_options[price_id]=5',
 												'text'   => esc_html__('Buy Now', 'themeatelier-core'),
 												'target' => '_self'
 											),
@@ -790,7 +797,7 @@ class ThemeatelierCoreMetaboxes
 											'lifetime_subtitle'     => esc_html__('Best Choice for Agencies and Developers', 'themeatelier-core'),
 											'lifetime_price'     => 399,
 											'lifetime_parches_button'     => array(
-												'url'    => 'https://themeatelier.net/checkout?edd_action=add_to_cart&download_id=534&edd_options[price_id]=3',
+												'url'    => 'https://themeatelier.net/checkout?edd_action=add_to_cart&download_id=534&edd_options[price_id]=6',
 												'text'   => esc_html__('Buy Now', 'themeatelier-core'),
 												'target' => '_self'
 											),

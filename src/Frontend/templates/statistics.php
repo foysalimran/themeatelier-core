@@ -16,7 +16,7 @@ $statistics_section = isset($options['statistics_section']) ? $options['statisti
             ?>
                     <div class="flex gap-3 statistic_item">
                         <?php if (!empty($statistics_icon)) : ?>
-                            <div class="w-16 h-16 flex items-center justify-center rounded-md bg-[<?php echo esc_attr($statistics_icon_bg) ?>]">
+                            <div class="w-16 h-16 flex items-center justify-center rounded-md" style="background-color: <?php echo esc_attr($statistics_icon_bg) ?>">
                                 <img src="<?php echo esc_attr($statistics_icon) ?>" alt="" />
                             </div>
                         <?php endif ?>
@@ -31,7 +31,6 @@ $statistics_section = isset($options['statistics_section']) ? $options['statisti
                             <?php endif; ?>
                         </div>
                     </div>
-
             <?php
                 endforeach;
             endif;

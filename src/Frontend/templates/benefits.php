@@ -7,9 +7,11 @@ $benefits_items = isset($options['benefits_items']) ? $options['benefits_items']
 <section id="<?php echo esc_attr($benefits_section_id); ?>" class="py-12 ta-featured md:pb-20 md:pt-24">
     <div class="container px-4 mx-auto">
         <div class="max-w-3xl mx-auto mb-12 text-center">
-            <h2 class="text-ta-section-title -mt-1.5 mb-0">
-                <?php echo wp_kses_post($benefits_section_title); ?>
-            </h2>
+            <?php if ($benefits_section_title) : ?>
+                <h2 class="text-ta-section-title -mt-1.5 mb-0">
+                    <?php echo wp_kses_post($benefits_section_title); ?>
+                </h2>
+            <?php endif; ?>
         </div>
         <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
             <?php
