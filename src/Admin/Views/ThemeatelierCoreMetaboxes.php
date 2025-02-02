@@ -222,6 +222,13 @@ class ThemeatelierCoreMetaboxes
 					'default' => 'benefits',
 				),
 				array(
+					'id'    => 'benefits_section_title',
+					'type'  => 'text',
+					'title' => esc_html__('Benefits Section Title', 'themeatelier-core'),
+					'dependency' => array('section', '==', 'benefits', 'any'),
+					'default' => 'Key Benefits: Why Should You Use <br><span class="demo_text_primary">WhatsApp Chat Help?</span>',
+				),
+				array(
 					'id'        => 'benefits_items',
 					'type'      => 'group',
 					'title'     => esc_html__('Benefits Items', 'themeatelier-core'),
