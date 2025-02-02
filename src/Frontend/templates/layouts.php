@@ -1,10 +1,11 @@
 <?php
+$layout_section_id = isset($options['layout_section_id']) ? $options['layout_section_id'] : 'layout';
 $layout_section_title = isset($options['layout_section_title']) ? $options['layout_section_title'] : '';
 $layout_section_subtitle = isset($options['layout_section_subtitle']) ? $options['layout_section_subtitle'] : '';
 $layout_items = isset($options['layout_items']) ? $options['layout_items'] : '';
 ?>
 
-<section
+<section id="<?php echo esc_attr($layout_section_id); ?>"
     class="py-12 layouts tabs md:py-20 demo_section_bg">
     <div class="container px-4 mx-auto">
         <div class="max-w-3xl mx-auto mb-12 text-center">

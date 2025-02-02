@@ -1,16 +1,17 @@
-<?php 
+<?php
+$faq_section_id = isset($options['faq_section_id']) ? $options['faq_section_id'] : 'faq';
 $faq_section_title = isset($options['faq_title']) ? $options['faq_title'] : '';
 $faq_items = !empty($options['faq_items']) ? $options['faq_items'] : [];
 ?>
 <section
-    id="faq" class="py-12 lg:py-20 demo_section_bg">
-    <?php if($faq_section_title) : ?>
-    <div class="container">
-        <div class="mb-12 text-center">
-            <h2 class="text-ta-section-title -mt-1.5 mb-4"><?php echo esc_html($faq_section_title); ?></h2>
+    id="<?php echo esc_attr($faq_section_id); ?>" class="py-12 lg:py-20 demo_section_bg">
+    <?php if ($faq_section_title) : ?>
+        <div class="container">
+            <div class="mb-12 text-center">
+                <h2 class="text-ta-section-title -mt-1.5 mb-4"><?php echo esc_html($faq_section_title); ?></h2>
+            </div>
         </div>
-    </div>
-    <?php endif; ?> 
+    <?php endif; ?>
     <div class="container">
         <div class="grid grid-cols-12 gap-8">
             <div class="col-span-12 lg:col-span-6">
@@ -86,20 +87,20 @@ $faq_items = !empty($options['faq_items']) ? $options['faq_items'] : [];
             </div>
 
             <div class="col-span-12 lg:col-span-6">
-            <?php if($faq_items) : ?>
-                <?php foreach ($faq_items as $item => $faq_item) : ?>
-                <div class="mb-4 bg-white border border-solid border-border-color" data-index="0">
-                    <div class="flex items-center justify-between gap-2 px-6 cursor-pointer accordion-header">
-                        <h3 class="mb-0 text-xl"><?php echo esc_html($faq_item['faq_item_title']); ?></h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
-                        </svg>
-                    </div>
-                    <div class="px-6 accordion-content">
-                        <p class="p-0 mt-3 mb-0"><?php echo wp_kses_post($faq_item['faq_item_description']); ?></p>
-                    </div>
-                </div>
-                <?php endforeach; ?>
+                <?php if ($faq_items) : ?>
+                    <?php foreach ($faq_items as $item => $faq_item) : ?>
+                        <div class="mb-4 bg-white border border-solid border-border-color" data-index="0">
+                            <div class="flex items-center justify-between gap-2 px-6 cursor-pointer accordion-header">
+                                <h3 class="mb-0 text-xl"><?php echo esc_html($faq_item['faq_item_title']); ?></h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                    <path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                                </svg>
+                            </div>
+                            <div class="px-6 accordion-content">
+                                <p class="p-0 mt-3 mb-0"><?php echo wp_kses_post($faq_item['faq_item_description']); ?></p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>

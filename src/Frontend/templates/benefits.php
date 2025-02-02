@@ -1,9 +1,10 @@
 <?php
+$benefits_section_id = isset($options['benefits_section_id']) ? $options['benefits_section_id'] : 'benefits';
 $benefits_section_title = isset($options['benefits_section_title']) ? $options['benefits_section_title'] : '';
 $benefits_items = isset($options['benefits_items']) ? $options['benefits_items'] : '';
 ?>
 
-<section class="py-12 ta-featured md:pb-20 md:pt-24">
+<section id="<?php echo esc_attr($benefits_section_id); ?>" class="py-12 ta-featured md:pb-20 md:pt-24">
     <div class="container px-4 mx-auto">
         <div class="max-w-3xl mx-auto mb-12 text-center">
             <h2 class="text-ta-section-title -mt-1.5 mb-0">

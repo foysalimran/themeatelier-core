@@ -77,24 +77,4 @@ class Admin
         wp_enqueue_style('themeatelier-core-admin-style');
     }
 
-    public function filter_themeatelier_core_admin_column()
-    {
-        $admin_columns['cb']         = '<input type="checkbox" />';
-        $admin_columns['title']      = esc_html__('Title', 'themeatelier-core');
-        $admin_columns['shortcode']  = esc_html__('Shortcode', 'themeatelier-core');
-        $admin_columns['date']       = esc_html__('Date', 'themeatelier-core');
-
-        return $admin_columns;
-    }
-
-    public function display_themeatelier_core_admin_fields($column, $post_id)
-    {
-        switch ($column) {
-            case 'shortcode':
-                $column_field = '<input  class="themeatelier_core_input" style="width: 230px;padding: 4px 8px;cursor: pointer;" type="text" onClick="this.select();" readonly="readonly" value="[themeatelier-core id=&quot;' . $post_id . '&quot;]"/> <div class="themeatelier-core-after-copy-text"><i class="icofont-check-circled"></i> ' . esc_html('Shortcode Copied to Clipboard!', 'themeatelier-core') . ' </div>';
-                echo $column_field;
-                break;
-        } // end switch.
-    }
-
 }

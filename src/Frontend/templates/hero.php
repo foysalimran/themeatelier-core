@@ -1,4 +1,5 @@
 <?php
+$section_id = isset($options['section_id']) ? $options['section_id'] : 'hero';
 $section_title = isset($options['section_title']) ? $options['section_title'] : '';
 $subtitle = isset($options['subtitle']) ? $options['subtitle'] : '';
 $button_01_text = isset($options['button_01']['text']) ? $options['button_01']['text'] : '';
@@ -12,7 +13,7 @@ $money_back_guarantee = isset($options['money_back_guarantee']) ? $options['mone
 $right_image = isset($options['right_image']['url']) ? $options['right_image']['url'] : '';
 
 ?>
-<section
+<section id="<?php echo esc_attr($section_id); ?>"
     class="h-full pb-20 lg:pb-0 lg:h-[750px] demo_section_bg">
     <div class="container h-full px-4 m-auto">
         <div class="relative z-10 grid items-center h-full grid-cols-1 gap-8 lg:grid-cols-2">
