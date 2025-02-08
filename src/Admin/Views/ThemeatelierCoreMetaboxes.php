@@ -964,9 +964,9 @@ It\'s important to note that CodeCanyon does not offer a developer or multi-site
 						'type'           => 'group',
 						'title'          => esc_html__('Select Section', 'themeatelier-core'),
 						'button_title'  => esc_html__('New Section', 'statesman'),
-						'accordion_title_prefix'  => true,
+						// 'accordion_title_prefix'  => true,
 						'accordion_title_number'    => true,
-						'accordion_title_auto'  => false,
+						// 'accordion_title_auto'  => true,
 						'fields'    => array(
 							array(
 								'id'	=> 'select_section',
