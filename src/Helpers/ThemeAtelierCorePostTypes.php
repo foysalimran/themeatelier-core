@@ -68,7 +68,7 @@ class ThemeAtelierCorePostTypes
 			array(
 				'name'               => esc_html__('ThemeAtelier Core Section', 'themeatelier-core'),
 				'singular_name'      => esc_html__('Section', 'themeatelier-core'),
-				'menu_name'          => esc_html__('ThemeAtelier Core', 'themeatelier-core'),
+				'menu_name'          => esc_html__('Sections', 'themeatelier-core'),
 				'all_items'          => esc_html__('All Sections', 'themeatelier-core'),
 				'add_new'            => esc_html__('Add Section', 'themeatelier-core'),
 				'add_new_item'       => esc_html__('Generate New Section', 'themeatelier-core'),
