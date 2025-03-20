@@ -12,7 +12,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="<?php echo esc_url($item_logo); ?>">
-  <?php wp_head(); ?>
+ 
   <!-- Google Tag Manager -->
   <script>
     (function(w, d, s, l, i) {
@@ -31,16 +31,14 @@
     })(window, document, 'script', 'dataLayer', 'GTM-P44ZGX9');
   </script>
   <!-- End Google Tag Manager -->
-
+  <?php wp_head(); ?>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P44ZGX9"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 </head>
 
 <body <?php body_class(); ?>>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P44ZGX9"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-
 
   <header class="cwp-header" style="z-index: 99" id="menu">
     <nav class="container flex flex-wrap items-center justify-between gap-2">
