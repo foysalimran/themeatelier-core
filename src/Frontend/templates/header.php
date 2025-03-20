@@ -3,7 +3,6 @@
   $change_nav_menu = isset($options['change_nav_menu']) ? $options['change_nav_menu'] : '';
   $select_nav_menu = isset($options['select_nav_menu']) ? $options['select_nav_menu'] : '';
   ?>
-
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
