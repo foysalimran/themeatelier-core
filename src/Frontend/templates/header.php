@@ -1,3 +1,9 @@
+<?php
+  $item_logo = isset($options['item_logo']['url']) ? $options['item_logo']['url'] : '';
+  $change_nav_menu = isset($options['change_nav_menu']) ? $options['change_nav_menu'] : '';
+  $select_nav_menu = isset($options['select_nav_menu']) ? $options['select_nav_menu'] : '';
+  ?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -5,6 +11,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="<?php echo esc_url($item_logo); ?>">
   <?php wp_head(); ?>
   <!-- Google Tag Manager -->
   <script>
@@ -24,6 +31,7 @@
     })(window, document, 'script', 'dataLayer', 'GTM-P44ZGX9');
   </script>
   <!-- End Google Tag Manager -->
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -32,11 +40,7 @@
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <?php
-  $item_logo = isset($options['item_logo']['url']) ? $options['item_logo']['url'] : '';
-  $change_nav_menu = isset($options['change_nav_menu']) ? $options['change_nav_menu'] : '';
-  $select_nav_menu = isset($options['select_nav_menu']) ? $options['select_nav_menu'] : '';
-  ?>
+
 
   <header class="cwp-header" style="z-index: 99" id="menu">
     <nav class="container flex flex-wrap items-center justify-between gap-2">
