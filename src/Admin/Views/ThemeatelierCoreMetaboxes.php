@@ -21,7 +21,7 @@ class ThemeatelierCoreMetaboxes
 		THEMEATELIER_CORE::createMetabox(
 			$prefix,
 			array(
-				'title'        => esc_html__('Sections', 'themeatelier-core'),
+				'title'        => esc_html__('Themeatelier Core', 'themeatelier-core'),
 				'post_type'    => 'themeatelier-core',
 				'show_restore' => false,
 				'context'      => 'normal',
@@ -950,7 +950,7 @@ It\'s important to note that CodeCanyon does not offer a developer or multi-site
 		THEMEATELIER_CORE::createMetabox(
 			$prefix,
 			array(
-				'title'        => esc_html__('Sections', 'themeatelier-core'),
+				'title'        => esc_html__('Themeatelier Core', 'themeatelier-core'),
 				'post_type'    => 'download',
 			)
 		);
