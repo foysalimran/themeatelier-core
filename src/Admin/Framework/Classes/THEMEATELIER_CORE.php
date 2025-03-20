@@ -446,7 +446,7 @@ if (! class_exists('THEMEATELIER_CORE')) {
 
       // Wp color picker
       wp_enqueue_style('wp-color-picker');
-      wp_enqueue_style('ico-font');
+      wp_enqueue_style('icofont');
 
       wp_enqueue_script('wp-color-picker');
 
