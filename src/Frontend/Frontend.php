@@ -45,6 +45,14 @@ class Frontend
         $this->themeatelier_core_public_action();
     }
 
+    public static function enqueue_scripts($hook)
+    {
+
+        if(is_single() && 'download' == get_post_type()) {
+        wp_enqueue_style('ta-single-tailwind');
+    }
+    }
+
     private function themeatelier_core_public_action()
     {
         add_shortcode('themeatelier-core', array($this, 'themeatelier_core_shortcode_render'));

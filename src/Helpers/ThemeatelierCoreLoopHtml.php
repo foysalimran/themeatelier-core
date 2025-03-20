@@ -16,6 +16,9 @@ class ThemeatelierCoreLoopHtml
         $section = isset($section['section']) ? $section['section'] : 'hero';
 
         switch ($section) {
+            case 'header':
+                include Helpers::themeateleier_core_locate_template('header.php');
+                break;
             case 'hero':
                 include Helpers::themeateleier_core_locate_template('hero.php');
                 break;
@@ -38,7 +41,7 @@ class ThemeatelierCoreLoopHtml
                 include Helpers::themeateleier_core_locate_template('features_glance.php');
                 break;
             case 'backend_screenshot':
-                include Helpers::themeateleier_core_locate_template('backend_screenshot.php');
+                include Helpers::themeateleier_core_locate_template('backend-screenshots.php');
                 break;
             case 'pricing':
                 include Helpers::themeateleier_core_locate_template('pricing.php');

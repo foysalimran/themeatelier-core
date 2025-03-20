@@ -66,18 +66,18 @@ class ThemeAtelierCorePostTypes
 		$labels = apply_filters(
 			'themeatelier_core_post_type_labels',
 			array(
-				'name'               => esc_html__('Core Section', 'themeatelier-core'),
+				'name'               => esc_html__('ThemeAtelier Core Section', 'themeatelier-core'),
 				'singular_name'      => esc_html__('Section', 'themeatelier-core'),
 				'menu_name'          => esc_html__('Sections', 'themeatelier-core'),
 				'all_items'          => esc_html__('All Sections', 'themeatelier-core'),
 				'add_new'            => esc_html__('Add Section', 'themeatelier-core'),
 				'add_new_item'       => esc_html__('New Section', 'themeatelier-core'),
 				'new_item'           => esc_html__('New Section', 'themeatelier-core'),
-				'edit_item'          => esc_html__('Edit Section', 'themeatelier-core'),
-				'view_item'          => esc_html__('View Section', 'themeatelier-core'),
-				'name_admin_bar'     => esc_html__('Section', 'themeatelier-core'),
-				'search_items'       => esc_html__('Search Section', 'themeatelier-core'),
-				'parent_item_colon'  => esc_html__('Parent Section:', 'themeatelier-core'),
+				'edit_item'          => esc_html__('Edit Generated Section', 'themeatelier-core'),
+				'view_item'          => esc_html__('View Generated Section', 'themeatelier-core'),
+				'name_admin_bar'     => esc_html__('ThemeAtelier Core Generator', 'themeatelier-core'),
+				'search_items'       => esc_html__('Search Generated Section', 'themeatelier-core'),
+				'parent_item_colon'  => esc_html__('Parent Generated Section:', 'themeatelier-core'),
 				'not_found'          => esc_html__('No Section found.', 'themeatelier-core'),
 				'not_found_in_trash' => esc_html__('No Section found in Trash.', 'themeatelier-core')
 			)

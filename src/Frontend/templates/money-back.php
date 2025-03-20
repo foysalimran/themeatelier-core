@@ -1,4 +1,5 @@
 <?php 
+$money_back_section_id = isset($options['money_back_section_id']) ? $options['money_back_section_id'] : 'mony_back';
 $money_back_title = isset($options['money_back_title']) ? $options['money_back_title'] : '';
 $money_back_description = isset($options['money_back_description']) ? $options['money_back_description'] : '';
 $money_back_payment_terms = isset($options['money_back_payment_terms']) ? $options['money_back_payment_terms'] : '';
@@ -13,7 +14,7 @@ $changelog = get_post_meta( $download_id, '_edd_sl_changelog', true );
 
 ?>
 
-<section class="py-12 money-back md:py-20">
+<section id="<?php echo esc_attr($money_back_section_id); ?>" class="py-12 money-back md:py-20">
     <div class="container px-4 mx-auto">
         <div class="grid grid-cols-12">
             <div class="lg:col-span-1"></div>
