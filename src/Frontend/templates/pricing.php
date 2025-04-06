@@ -56,7 +56,7 @@ $lifetime_description = !empty($pricing_table['lifetime_description']) ? $pricin
                         </div>
                         <?php endif; ?>
                         <hr class="mt-10 mb-10 bg-secondary text-secondary">
-                        <a target="_blank" href="<?php echo esc_url($yearly_parches_button_url); ?>" class="demo_btn_secondary !py-2 w-full">Buy Now</a>
+                        <a href="<?php echo esc_url($yearly_parches_button_url); ?>" class="demo_btn_secondary !py-2 w-full">Buy Now</a>
                         <div class="h-8"></div>
                         <?php echo wp_kses_post($yearly_features); ?>
                         
@@ -96,7 +96,7 @@ $lifetime_description = !empty($pricing_table['lifetime_description']) ? $pricin
                         </div>
                         <?php endif; ?>
                         <hr class="mt-10 mb-10 bg-secondary text-secondary">
-                        <a target="_blank" href="<?php echo esc_url($lifetime_parches_button_url); ?>" class="demo_btn_secondary !py-2 w-full">Buy Now</a>
+                        <a href="<?php echo esc_url($lifetime_parches_button_url); ?>" class="demo_btn_secondary !py-2 w-full">Buy Now</a>
                         <div class="h-8"></div>
                         <?php echo wp_kses_post($lifetime_features); ?>
                        
