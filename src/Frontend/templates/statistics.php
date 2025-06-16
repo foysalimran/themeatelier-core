@@ -3,7 +3,7 @@ $statistics_section_id = isset($options['statistics_section_id']) ? $options['st
 $statistics_section = isset($options['statistics_section']) ? $options['statistics_section'] : '';
 ?>
 <section id="<?php echo esc_attr($statistics_section_id); ?>" class="px-4">
-    <div class="max-w-5xl px-10 py-8 mx-auto -mt-16 bg-white shadow-md statistics rounded-xl">
+    <div class="max-w-5xl px-10 py-8 mx-auto mt-10 bg-white shadow-md lg:-mt-16 statistics rounded-xl">
         <div class="grid justify-center gap-8 md:grid-cols-3 md:justify-start">
             <?php
             if (!empty($statistics_section)) :
@@ -16,7 +16,7 @@ $statistics_section = isset($options['statistics_section']) ? $options['statisti
             ?>
                     <div class="flex gap-3 statistic_item">
                         <?php if (!empty($statistics_icon)) : ?>
-                            <div class="w-16 h-16 flex items-center justify-center rounded-md" style="background-color: <?php echo esc_attr($statistics_icon_bg) ?>">
+                            <div class="flex items-center justify-center w-16 h-16 rounded-md" style="background-color: <?php echo esc_attr($statistics_icon_bg) ?>">
                                 <img src="<?php echo esc_attr($statistics_icon) ?>" alt="" />
                             </div>
                         <?php endif ?>

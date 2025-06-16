@@ -14,9 +14,9 @@ $right_image = isset($options['right_image']['url']) ? $options['right_image']['
 
 ?>
 <section id="<?php echo esc_attr($section_id); ?>"
-    class="h-full pb-20 lg:pb-0 lg:h-[750px] demo_section_bg">
-    <div class="container h-full px-4 m-auto">
-        <div class="relative z-10 grid items-center h-full grid-cols-1 gap-8 lg:grid-cols-2">
+    class="pb-20 lg:pb-0 lg:h-[750px] demo_section_bg">
+    <div class="container px-4 m-auto lg:h-full">
+        <div class="relative z-10 grid items-center grid-cols-1 gap-8 lg:h-full lg:grid-cols-2">
             <div class="order-2 lg:order-1">
                 <?php if ($section_title) : ?>
                     <h1 class="mb-0 text-4xl xl:text-ta-section-title">
@@ -31,7 +31,7 @@ $right_image = isset($options['right_image']['url']) ? $options['right_image']['
                 <?php endif;
                 if ($button_01_text || $button_02_text) :
                 ?>
-                    <div class="flex gap-3 mb-1">
+                    <div class="flex gap-3 mt-6 mb-1">
                         <?php
                         if ($button_01_text) :
                         ?>
