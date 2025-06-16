@@ -51,7 +51,7 @@ class Helpers
 	 */
 	public function register_all_scripts()
 	{
-		wp_register_style('ico-font', THEMEATELER_CORE_ASSETS . 'css/icofont' . $this->min . '.css', array(), '1.0.0', 'all');
+		wp_register_style('icofont', THEMEATELER_CORE_ASSETS . 'css/icofont.min.css', array(), '1.0.0', 'all');
 		wp_register_style('ta-single-tailwind', THEMEATELER_CORE_ASSETS . 'css/themeatelier-core.min.css', array(), '1.0.0', 'all');
 	}
 }

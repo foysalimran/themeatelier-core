@@ -1,3 +1,8 @@
+<?php
+  $item_logo = isset($options['item_logo']['url']) ? $options['item_logo']['url'] : '';
+  $change_nav_menu = isset($options['change_nav_menu']) ? $options['change_nav_menu'] : '';
+  $select_nav_menu = isset($options['select_nav_menu']) ? $options['select_nav_menu'] : '';
+  ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -5,7 +10,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <?php wp_head(); ?>
+  <link rel="icon" type="image/x-icon" href="<?php echo esc_url($item_logo); ?>">
+ 
   <!-- Google Tag Manager -->
   <script>
     (function(w, d, s, l, i) {
@@ -24,21 +30,16 @@
     })(window, document, 'script', 'dataLayer', 'GTM-P44ZGX9');
   </script>
   <!-- End Google Tag Manager -->
+  <?php wp_head(); ?>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P44ZGX9"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 </head>
 
 <body <?php body_class(); ?>>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P44ZGX9"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
-  <?php
-  $item_logo = isset($options['item_logo']['url']) ? $options['item_logo']['url'] : '';
-  $change_nav_menu = isset($options['change_nav_menu']) ? $options['change_nav_menu'] : '';
-  $select_nav_menu = isset($options['select_nav_menu']) ? $options['select_nav_menu'] : '';
-  ?>
-
-  <header class="cwp-header" id="menu">
+  <header class="cwp-header" style="z-index: 99" id="menu">
     <nav class="container flex flex-wrap items-center justify-between gap-2">
       <div class="items-center lg:flex">
         <div class="site-branding flex gap-1.5 items-center">

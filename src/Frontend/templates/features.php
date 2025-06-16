@@ -39,7 +39,7 @@ $cta_v2_money_back_guarantee   = isset($options['cta_v2_money_back_guarantee']) 
             ?>
                     <div class="grid items-center gap-10 mb-20 lg:grid-cols-2">
                         <?php if ($features_image_position == 'left') : ?>
-                            <div class="">
+                            <div class="feature_img">
                                 <img src="<?php echo esc_url($features_image); ?>" alt="">
                             </div>
                         <?php endif; ?>

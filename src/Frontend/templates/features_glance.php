@@ -14,7 +14,7 @@ $features_right_side_list = isset($options['features_right_side_list']) ? $optio
                 </h2>
             <?php endif; ?>
         </div>
-        <div class="grid items-center lg:gap-8 lg:grid-cols-2">
+        <div class="grid lg:gap-8 lg:grid-cols-2">
             <ul class="features-list">
                 <?php echo wp_kses_post($features_left_side_list); ?>
             </ul>
