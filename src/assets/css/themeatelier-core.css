@@ -9,3 +9,84 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  @apply font-black text-font-color;
+  font-family: "Lato", sans-serif;
+}
+body {
+  @apply text-font-color-light;
+  font-family: "Lato", sans-serif;
+}
+p {
+  @apply mb-4;
+}
+a {
+  @apply text-primary;
+}
+img {
+  @apply h-auto max-w-full;
+}
+figure {
+  width: auto !important;
+}
+h1 {
+  @apply text-4xl lg:text-5xl;
+}
+h2 {
+  @apply text-3xl lg:text-4xl;
+}
+h3 {
+  @apply text-2xl lg:text-3xl;
+}
+h4 {
+  @apply text-xl lg:text-2xl;
+}
+h5 {
+  @apply text-lg lg:text-xl;
+}
+h6 {
+  @apply text-base lg:text-lg;
+}
+
+input[type="radio"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+.ta-btn-primary {
+  @apply !py-1.5 lg:!py-2 px-5 lg:px-8 bg-primary rounded-full text-white  ease-linear duration-300 inline-block;
+}
+.ta-btn-primary:hover {
+  @apply bg-black;
+}
+
+.ta-btn-secondary {
+  @apply !py-1.5 lg:!py-2 px-5 lg:px-8 bg-inherit hover:bg-primary rounded-full border-2 border-primary text-primary hover:!text-white ease-linear duration-300 inline-block;
+}
+input,
+textarea,
+select {
+  @apply w-full p-3 text-base border rounded bg-secondary border-secondary focus:outline-none;
+}
+input[type="submit"] {
+  @apply cursor-pointer;
+}
+textarea {
+  @apply h-[150px];
+}
+input[type="submit"] {
+  @apply w-auto px-5 py-2 mt-4 text-white rounded bg-primary;
+}
+input[type="checkbox"] {
+  @apply w-auto;
+}
+label {
+  @apply block mb-3 font-bold capitalize text-font-color;
+}
