@@ -9,7 +9,7 @@
         const originalPrice = parseFloat(text);
         if (!isNaN(originalPrice)) {
           const discountedPrice = (originalPrice * 0.85).toFixed(2);
-          el.textContent = `$${discountedPrice}`;
+          el.textContent = `${discountedPrice}`;
         }
       });
     }
