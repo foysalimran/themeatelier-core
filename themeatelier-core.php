@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: 	Themeatelier Core
-Plugin URI: 	https://themeatelier.net/plugin/themeatelier-core/
+Plugin URI: 	https://themeatelier.net/
 Description: 	Themeatelier Core
-Version: 		1.0.2
+Version: 		1.0.3
 Author:         ThemeAtelier
 Author URI:     https://themeatelier.net/
 Text Domain:    themeatelier-core
@@ -19,7 +19,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use ThemeAtelier\ThemeAtelierCore\ThemeAtelierCore;
 
-define('THEMEATELER_CORE_VERSION', '1.0.2');
+define('THEMEATELER_CORE_VERSION', '1.0.3');
 define('THEMEATELER_CORE_FILE', __FILE__);
 define('THEMEATELER_CORE_DIRNAME', dirname(__FILE__));
 define('THEMEATELER_CORE_DIR_PATH', plugin_dir_path(__FILE__));
