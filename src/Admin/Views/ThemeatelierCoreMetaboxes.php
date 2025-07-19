@@ -591,6 +591,11 @@ class ThemeatelierCoreMetaboxes
 											'title' => esc_html__('Yearly Subtitle', 'themeatelier-core'),
 										),
 										array(
+											'id'    => 'regular_yearly_price',
+											'type'  => 'number',
+											'title' => esc_html__('Regular Yearly Price', 'themeatelier-core'),
+										),
+										array(
 											'id'    => 'yearly_price',
 											'type'  => 'number',
 											'title' => esc_html__('Yearly Price', 'themeatelier-core'),
@@ -615,6 +620,7 @@ class ThemeatelierCoreMetaboxes
 										array(
 											'yearly_title'     => esc_html__('Single Site', 'themeatelier-core'),
 											'yearly_subtitle'     => esc_html__('Best Choice for Individuals', 'themeatelier-core'),
+											'regular_yearly_price'     => 39,
 											'yearly_price'     => 29,
 											'yearly_parches_button'     => array(
 												'url'    => 'https://themeatelier.net/checkout?edd_action=add_to_cart&download_id=534&edd_options[price_id]=1',
@@ -641,6 +647,7 @@ class ThemeatelierCoreMetaboxes
 										array(
 											'yearly_title'     => esc_html__('Five Sites', 'themeatelier-core'),
 											'yearly_subtitle'     => esc_html__('Best Choice for Small Business and Freelancers', 'themeatelier-core'),
+											'regular_yearly_price'     => 145,
 											'yearly_price'     => 99,
 											'yearly_parches_button'     => array(
 												'url'    => 'https://themeatelier.net/checkout?edd_action=add_to_cart&download_id=534&edd_options[price_id]=2',
@@ -667,6 +674,7 @@ class ThemeatelierCoreMetaboxes
 										array(
 											'yearly_title'     => esc_html__('Unlimited Sites', 'themeatelier-core'),
 											'yearly_subtitle'     => esc_html__('Best Choice for Agencies and Developers', 'themeatelier-core'),
+											'regular_yearly_price'     => 399,
 											'yearly_price'     => 199,
 											'yearly_parches_button'     => array(
 												'url'    => 'https://themeatelier.net/checkout?edd_action=add_to_cart&download_id=534&edd_options[price_id]=3',
@@ -719,6 +727,11 @@ class ThemeatelierCoreMetaboxes
 											'title' => esc_html__('Lifetime Subtitle', 'themeatelier-core'),
 										),
 										array(
+											'id'    => 'regular_lifetime_price',
+											'type'  => 'number',
+											'title' => esc_html__('Regular Lifetime Price', 'themeatelier-core'),
+										),
+										array(
 											'id'    => 'lifetime_price',
 											'type'  => 'number',
 											'title' => esc_html__('Lifetime Price', 'themeatelier-core'),
@@ -743,6 +756,7 @@ class ThemeatelierCoreMetaboxes
 										array(
 											'lifetime_title'     => esc_html__('Single Site', 'themeatelier-core'),
 											'lifetime_subtitle'     => esc_html__('Best Choice for Individuals', 'themeatelier-core'),
+											'regular_lifetime_price' => '139',
 											'lifetime_price'     => 129,
 											'lifetime_parches_button'     => array(
 												'url'    => 'https://themeatelier.net/checkout?edd_action=add_to_cart&download_id=534&edd_options[price_id]=4',
@@ -769,6 +783,7 @@ class ThemeatelierCoreMetaboxes
 										array(
 											'lifetime_title'     => esc_html__('Five Sites', 'themeatelier-core'),
 											'lifetime_subtitle'     => esc_html__('Best Choice for Small Business and Freelancers', 'themeatelier-core'),
+											'regular_lifetime_price' => '545',
 											'lifetime_price'     => 229,
 											'lifetime_parches_button'     => array(
 												'url'    => 'https://themeatelier.net/checkout?edd_action=add_to_cart&download_id=534&edd_options[price_id]=5',
@@ -795,6 +810,7 @@ class ThemeatelierCoreMetaboxes
 										array(
 											'lifetime_title'     => esc_html__('Unlimited Sites', 'themeatelier-core'),
 											'lifetime_subtitle'     => esc_html__('Best Choice for Agencies and Developers', 'themeatelier-core'),
+											'regular_lifetime_price' => '999',
 											'lifetime_price'     => 399,
 											'lifetime_parches_button'     => array(
 												'url'    => 'https://themeatelier.net/checkout?edd_action=add_to_cart&download_id=534&edd_options[price_id]=6',

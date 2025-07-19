@@ -35,6 +35,7 @@ $lifetime_description = !empty($pricing_table['lifetime_description']) ? $pricin
                             
                             $yearly_title = $yearly['yearly_title'];
                             $yearly_subtitle = $yearly['yearly_subtitle'];
+                            $regular_yearly_price = $yearly['regular_yearly_price'];
                             $yearly_price = $yearly['yearly_price'];
                             $yearly_parches_button = $yearly['yearly_parches_button'];
                             $yearly_parches_button_url = $yearly['yearly_parches_button']['url'];
@@ -50,6 +51,9 @@ $lifetime_description = !empty($pricing_table['lifetime_description']) ? $pricin
                         <?php endif; ?>
                        <?php if($yearly_price) : ?>
                         <div class="flex items-end justify-center">
+                            <?php if($regular_yearly_price) : ?>
+                            <span class="ta_old_price">$<?php echo esc_html($regular_yearly_price); ?></span>
+                            <?php endif; ?> 
                             <p class="mb-0 text-lg font-bold">$</p>
                             <h4 class="text-4xl font-bold ta_regular_price"><?php echo esc_html($yearly_price); ?></h4>
                             <p class="mb-0">/ Yearly</p>
@@ -75,6 +79,7 @@ $lifetime_description = !empty($pricing_table['lifetime_description']) ? $pricin
             
                             $lifetime_title = $lifetime['lifetime_title'];
                             $lifetime_subtitle = $lifetime['lifetime_subtitle'];
+                            $regular_lifetime_price = $lifetime['regular_lifetime_price'];
                             $lifetime_price = $lifetime['lifetime_price'];
                             $lifetime_parches_button = $lifetime['lifetime_parches_button'];
                             $lifetime_parches_button_url = $lifetime['lifetime_parches_button']['url'];
@@ -90,6 +95,9 @@ $lifetime_description = !empty($pricing_table['lifetime_description']) ? $pricin
                         <?php endif; ?>
                         <?php if($lifetime_price): ?>
                         <div class="flex items-end justify-center">
+                                                    <?php if($regular_lifetime_price) : ?>
+                            <span class="ta_old_price">$<?php echo esc_html($regular_lifetime_price); ?></span>
+                            <?php endif; ?> 
                             <p class="mb-0 text-lg font-bold">$</p>
                             <h4 class="text-4xl font-bold ta_regular_price"><?php echo esc_html($lifetime_price); ?></h4>
                             <p class="mb-0">/ Lifetime</p>

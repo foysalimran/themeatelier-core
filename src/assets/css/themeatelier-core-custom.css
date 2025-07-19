@@ -38,3 +38,9 @@ content: 'Save up to 65%';
           transform: translateY(-8px);
       }
 }
+
+.ta_old_price{
+    display: inline-block;
+    margin-right: 5px;
+    text-decoration: line-through;
+}
