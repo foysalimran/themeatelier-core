@@ -24,7 +24,7 @@ $lifetime_description = !empty($pricing_table['lifetime_description']) ? $pricin
         <!-- Tabs -->
         <div class="flex justify-center gap-3 mb-2 shadow-md w-[fit-content] rounded-md mx-auto bg-white p-3">
             <button class="demo_btn_secondary !py-2 tab tab-active">Yearly</button>
-            <button class="demo_btn_secondary !py-2 tab">Lifetime</button>
+            <button class="demo_btn_secondary !py-2 tab ltd-tab">Lifetime</button>
         </div>
         <div class="mt-9 tab-content">
             <div class="tab-pane tab-pane-active">
@@ -51,12 +51,12 @@ $lifetime_description = !empty($pricing_table['lifetime_description']) ? $pricin
                        <?php if($yearly_price) : ?>
                         <div class="flex items-end justify-center">
                             <p class="mb-0 text-lg font-bold">$</p>
-                            <h4 class="text-4xl font-bold"><?php echo esc_html($yearly_price); ?></h4>
+                            <h4 class="text-4xl font-bold ta_regular_price"><?php echo esc_html($yearly_price); ?></h4>
                             <p class="mb-0">/ Yearly</p>
                         </div>
                         <?php endif; ?>
                         <hr class="mt-10 mb-10 bg-secondary text-secondary">
-                        <a href="<?php echo esc_url($yearly_parches_button_url); ?>" class="demo_btn_secondary !py-2 w-full">Buy Now</a>
+                        <a target="_blank" href="<?php echo esc_url($yearly_parches_button_url); ?>" class="ta_price_wrapper demo_btn_secondary !py-2 w-full">Buy Now</a>
                         <div class="h-8"></div>
                         <?php echo wp_kses_post($yearly_features); ?>
                         
@@ -91,12 +91,12 @@ $lifetime_description = !empty($pricing_table['lifetime_description']) ? $pricin
                         <?php if($lifetime_price): ?>
                         <div class="flex items-end justify-center">
                             <p class="mb-0 text-lg font-bold">$</p>
-                            <h4 class="text-4xl font-bold"><?php echo esc_html($lifetime_price); ?></h4>
+                            <h4 class="text-4xl font-bold ta_regular_price"><?php echo esc_html($lifetime_price); ?></h4>
                             <p class="mb-0">/ Lifetime</p>
                         </div>
                         <?php endif; ?>
                         <hr class="mt-10 mb-10 bg-secondary text-secondary">
-                        <a href="<?php echo esc_url($lifetime_parches_button_url); ?>" class="demo_btn_secondary !py-2 w-full">Buy Now</a>
+                        <a target="_blank" href="<?php echo esc_url($lifetime_parches_button_url); ?>" class="demo_btn_secondary !py-2 w-full ta_price_wrapper">Buy Now</a>
                         <div class="h-8"></div>
                         <?php echo wp_kses_post($lifetime_features); ?>
                        

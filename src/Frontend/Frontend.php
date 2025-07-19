@@ -50,6 +50,8 @@ class Frontend
 
         if(is_single() && 'download' == get_post_type()) {
         wp_enqueue_style('ta-single-tailwind');
+        wp_enqueue_style('ta-core-custom');
+        wp_enqueue_script('ta-core-custom');
     }
     }
 

@@ -1,0 +1,40 @@
+
+.ltd-tab{
+    position: relative;
+}
+.ltd-tab::before{
+content: 'Save up to 65%';
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    position: absolute;
+    top: -40px;
+    left: 55px;
+    border-radius: 5px;
+    white-space: nowrap;
+    padding: 5px 12px;
+    text-transform: uppercase;
+    background-color: #16BF6A;
+    box-shadow: 0 2px 5px rgb(60 60 60 / 15%);
+    animation: upDown 2.5s ease-in-out infinite;
+    font-weight: 600;
+}
+.ltd-tab::after{
+  content: "";
+    position: absolute;
+    border-width: 6px 8px;
+    border-style: solid;
+    top: -10px;
+    left: 63px;
+    border-color: #16BF6A transparent transparent #16BF6A;
+    animation: upDown 2.5s ease-in-out infinite;
+}
+@keyframes upDown {
+      0%, 100% {
+          transform: translateY(0);
+      }
+
+      50% {
+          transform: translateY(-8px);
+      }
+}

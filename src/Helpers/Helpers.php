@@ -51,7 +51,11 @@ class Helpers
 	 */
 	public function register_all_scripts()
 	{
-		wp_register_style('icofont', THEMEATELER_CORE_ASSETS . 'css/icofont.min.css', array(), THEMEATELER_CORE_VERSION, 'all');
-		wp_register_style('ta-single-tailwind', THEMEATELER_CORE_ASSETS . 'css/themeatelier-core.min.css', array(), THEMEATELER_CORE_VERSION, 'all');
+		  $min = SCRIPT_DEBUG ? '' : '.min';
+		wp_register_style('icofont', THEMEATELER_CORE_ASSETS . 'css/icofont' . $min . '.css', array(), THEMEATELER_CORE_VERSION, 'all');
+		wp_register_style('ta-single-tailwind', THEMEATELER_CORE_ASSETS . 'css/themeatelier-core' . $min . '.css', array(), THEMEATELER_CORE_VERSION, 'all');
+		wp_register_style('ta-core-custom', THEMEATELER_CORE_ASSETS . 'css/themeatelier-core-custom.css', array(), THEMEATELER_CORE_VERSION, 'all');
+
+		wp_register_script('ta-core-custom', THEMEATELER_CORE_ASSETS . 'js/themeatelier-core.js', array(), THEMEATELER_CORE_VERSION, 'all');
 	}
 }
